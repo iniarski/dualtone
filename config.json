@@ -1,0 +1,10 @@
+{
+    "frame_size" : 750,
+    "frame_step" : 250,
+    "min_symbol_frames" : 40,
+    "max_symbol_break" : 6,
+    "min_error_ratio" : 1.05,
+    "read_entire_signal" : true,
+    "max_frames" : 12000,
+    "filepath" : "challenge2023.wav"
+}
