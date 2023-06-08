@@ -1,6 +1,8 @@
 import numpy as np
 import scipy.signal as sig
 
+# class for creating exemplary DTMF symbols (without noise)
+
 class ExemplarySymbols:
     
     def __init__(self, frame_size: int, f_samp: int):
@@ -87,18 +89,5 @@ class ExemplarySymbols:
         # Power Spectral Density of the symbol
         (freqspace, PSD) = sig.periodogram(symbol, self.f_samp, scaling='density')
         
-        # This piece plots PSD of a symbol
-        """
-        if horz_index == vert_index == 2:
-            import matplotlib.pyplot as plt
-            
-            plt.figure("Symbol PSD")
-            plt.plot(freqspace, PSD, ds = "steps")
-            title = "DTMF symbol " + self.symbols[vert_index][horz_index] + " PSD"
-            plt.title(title)
-            plt.grid(True)
-            plt.xlabel("f[Hz]")
-            plt.show()
-        """
         return PSD
     

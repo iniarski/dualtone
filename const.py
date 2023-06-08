@@ -1,5 +1,7 @@
 import os.path
 
+# clas for parsing configuration
+
 class ConstParser:
     
     def __init__(self, filepath: str):
@@ -21,10 +23,12 @@ class ConstParser:
         with open(self.filepath) as json_file:
             self.constants = json.load(json_file)
             
+        self.suplement_with_defaults()
+            
             
     def suplement_with_defaults(self):
         
-        # if a value is not specified in the file, the defaul is used
+        # if a value is not specified in the file, the default is used
         
         def set_default(key, value):
             if key not in self.constants:
